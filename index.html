@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan de prestation journalière</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .header .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .header .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .header input {
+      margin-top: 5px;
+      padding: 5px;
+      font-size: 16px;
+    }
+    .container {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .cadre {
+      border: 2px solid #000;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f1f1; /* Légèrement grisé */
+      text-align: center;
+    }
+    td textarea {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      padding: 5px;
+      box-sizing: border-box;
+      resize: none; /* Empêche le redimensionnement manuel */
+      height: 100px; /* Ajuste la hauteur initiale */
+    }
+    td input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .large-cell {
+      height: auto;
+      vertical-align: top;
+    }
+
+    /* Styles spécifiques au tableau "Opération à effectuer" */
+    .operations-table .large-operation-cell {
+      height: 150px; /* Ajuste la hauteur de la cellule */
+      position: relative;
+      vertical-align: top;
+    }
+    .operations-table .large-operation-cell div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .operations-table .large-operation-cell .top-left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-weight: bold;
+    }
+    .operations-table .large-operation-cell .center {
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      width: calc(100% - 20px);
+      text-align: left;
+    }
+    .operations-table .large-operation-cell .center label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .operations-table .large-operation-cell .center input {
+      width: 200px;
+    }
+
+    .top-right-text {
+      position: absolute;
+      top: 20px; /* Ajuste la distance par rapport au haut */
+      right: 170px; /* Ajuste la distance par rapport à la droite */
+      font-size: 14px;
+      font-weight: bold;
+    }  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Titre et en-têtes -->
+    <div class="header">
+      <div class="title">Plan de prestation journalière</div>
+      <div class="form-group">
+        <label for="number">N° :</label>
+        <input type="number" id="number" placeholder="Entrez le numéro" required>
+        <label for="date">Date :</label>
+        <input type="date" id="date" required>
+      </div>
+    </div>
+    
+    <!-- Cadre avec texte -->
+    <div class="cadre">
+      <p><strong>Document à utiliser pour les travaux en station-service :</strong></p>
+      <p>À remplir conjointement par le responsable de la station (ou son représentant) et par la / les entreprise(s) extérieure(s) intervenante(s) et obligatoirement avant le début des travaux.</p>
+    </div>
+    
+    <!-- Premier tableau -->
+    <table>
+      <thead>
+        <tr>
+          <th>Entreprise utilisatrice (station-service)</th>
+          <th>Nom de l'entreprise Extérieure</th>
+          <th>Entreprise principale</th>
+          <th>Entreprise sous-traitante</th>
+          <th>Nom de l'intervenant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="large-cell" rowspan="6">
+            <textarea placeholder="Cachet commercial de la station-service"></textarea>
+          </td>
+          <td><input type="text" placeholder="Nom"></td>
+          <td><input type="text" placeholder="Nom"></td>
+          <td><input type="text" placeholder="Nom"></td>
+          <td><input type="text" placeholder="Nom"></td>
+        </tr>
+        <tr>
+          <td><input type="text" placeholder="Nom"></td>
+          <td><input type="text" placeholder="Nom"></td>
+          <td><input type="text" placeholder="Nom"></td>
+          <td><input type="text" placeholder="Nom"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+        </tr>
+        <tr>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+            <td><input type="text" placeholder="Nom"></td>
+          </tr>
+
+      </tbody>
+    </table>
+    
+    <!-- Deuxième tableau -->
+    <table class="operations-table">
+      <thead>
+        <tr>
+          <th>Opération à effectuer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="large-operation-cell">
+            <div>
+              <div class="top-left">Emplacement prévu :</div>
+              <div class="center">
+                <label for="operation-date">Date de l'intervention :</label>
+                <input type="date" id="operation-date">
+              </div>
+              <span class="top-right-text">Fin d'intervention prévue :</span>         
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
